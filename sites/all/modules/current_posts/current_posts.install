@@ -1,0 +1,32 @@
+<?php
+/**
+ * @file
+ * A block module that displays recent blog and forum posts.
+ */
+
+/**
+ * Implements hook_schema().
+ *
+ * Displays help and module information.
+ *
+ * @param path 
+ *   Which path of the site we're using to display help
+ * @param arg 
+ *   Array that holds the current path as returned from arg() function
+ */
+
+function current_posts_schema() {
+	$schema['mytable1'] = array(
+		'description' => 'Joku taulukko vaan xD',
+		'fields' => array (
+			'age' => array(
+				'description' => 'Jonkun ika',
+				'type' => 'int'),
+			'uniqueid' => array(
+				'description' => 'Uniikki ID',
+				'type' => 'serial'),
+		),
+		'primary key' => array('uniqueid'),
+	);
+	return $schema;
+}
