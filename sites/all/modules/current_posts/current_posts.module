@@ -1,0 +1,36 @@
+<?php
+/**
+ * @file
+ * A block module that displays recent blog and forum posts.
+ */
+
+/**
+ * Implements hook_help().
+ *
+ * Displays help and module information.
+ *
+ * @param path 
+ *   Which path of the site we're using to display help
+ * @param arg 
+ *   Array that holds the current path as returned from arg() function
+ */
+function current_posts_help($path, $arg) {
+	switch ($path) {
+		case "admin/help#current_posts":
+			return t("Displays links to nodes created on this date");
+			break;
+	}
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function current_posts_block_info() {
+	$blocks['current_posts'] = array(
+		// Nimi joka ilmestyy block listaan.
+		'info' => t('Current posts'),
+		// Oletus cache asetus.
+		'cache' => DRUPAL_CACHE_PER_ROLE,
+	);
+	return $blocks;
+}
