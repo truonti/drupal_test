@@ -1,0 +1,40 @@
+<?php
+
+    /**
+     * @file
+     * joonasblock.module
+     */
+
+    /**
+     * Implements hook_block_info().
+     */
+    function joonasblock_block_info() {
+
+        // This example comes from node.module.
+        $blocks['joonasblock'] = array(
+        'info' => t('Joonas Block'),
+        );
+        return $blocks;
+    }
+
+    /**
+     * Implements hook_block_view().
+     */
+    function joonasblock_block_view($delta = '') {
+
+        // This example is adapted from node.module.
+        $block = array();
+        switch ($delta) {
+          case 'joonasblock':
+            $block['subject'] = t('<h1>Custom block developed by Joonas Heinonen</h1>');
+            $block['content'] = array(
+              '#theme' => 'feed_icon',
+              '#url' => 'rss.xml',
+              '#title' => t('Joonas Block'),
+            );
+            break;
+        }
+        return $block;
+    }
+
+?>
