@@ -1,0 +1,5 @@
+name = "Joonas Block module"
+description = "A custom block implemented by Joonas Heinonen"
+core = "7.x"
+php = "7.4.2"
+version = "7.x-1.0"
